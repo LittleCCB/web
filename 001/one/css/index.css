@@ -1,0 +1,35 @@
+.pc{
+    display: block;
+}
+.mobile{
+    display: none;
+    width: 100%;
+}
+#cd{
+    display: none;
+    width: 100%;
+}、
+
+#cd table{
+    width: 100%;
+    padding: 5px;
+}
+#cd table tr{
+    margin-top: 2px;
+    background-color: gray;
+}
+@media (max-width: 500px) {
+    .pc{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
+    #cd{
+        display: none;
+    }
+}
+#NO_1{
+    display: none;
+    color: red;
+}

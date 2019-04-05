@@ -3,9 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
+<script src="js/jquery.js"></script>
 <body>
-<h1>Welcome!</h1>
-<h2>啦啦啦</h2>
+<div class="pc">
+    <a href="#">001</a>
+    <a href="#">002</a>
+    <a href="#">003</a>
+    <a href="#">004</a>
+    <a href="#">005</a>
+    <a href="#">006</a>
+</div>
+<div class="mobile">
+    <a href="#" id="caiDan">菜单</a>
+    <div id="cd">
+        <table>
+            <tr>
+                <td><a href="#">001</a></td>
+            </tr>
+            <tr>
+                <td><a href="#">002</a></td>
+            </tr>
+            <tr>
+                <td><a href="#">003</a></td>
+            </tr>
+            <tr>
+                <td><a href="#">004</a></td>
+            </tr>
+            <tr>
+                <td><a href="#">005</a></td>
+            </tr>
+            <tr>
+                <td><a href="#">006</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div id="demo"></div>
+<div style="margin: 0 auto">
+    用户名：<input type="text" placeholder="请输入用户名" style="display: block">
+    密码：<input type="text" id="password" style="display: block" onclick="c()">
+    <small id="NO_1">密码只能包含字母、数字和下划线，且长度在6~18之间</small>
+</div>
 </body>
+<script>
+    //正则表达式，用于判断字符串样式
+    function c(){
+
+            var reg = /^[a-zA-Z]\w{5,17}$/;
+            var aaa = reg.test(this.value);
+            if(aaa == true){
+                $(#NO_1).hide();
+            }else {
+                $(#NO_1).show();
+            }
+
+    }
+    // var password = document.getElementById('password');
+    // password.onchange = function () {
+    //     var reg = /^[a-zA-Z]\w{5,17}$/;
+    //     var aaa = reg.test(this.value);
+    //     if(aaa == true){
+    //         NO_1.style.display = 'none';
+    //     }else {
+    //         NO_1.style.display = 'block';
+    //     }
+    // };
+
+    var caiDan = document.getElementById('caiDan');
+    var cd = document.getElementById('cd');
+    caiDan.onclick = function () {
+        cd.style.display = 'block';
+    };
+    // 对象的运用
+    var person = [];
+    person[0]={
+        name:"zhangsan",
+        age:18,
+    };
+    person[1]={
+        name:"lisi",
+        age:20,
+    };
+    person[2]={
+        name:"wangwu",
+        age:19,
+    };
+    person[3]={
+        name:"baibai",
+        age:20,
+    };
+    var demo = document.getElementById('demo');
+    caiDan.onclick = function () {
+        for (var i = 0; i < person.length; i++) {
+            var div = document.createElement("div");
+            div.innerHTML = person[i].name + "今年" + person[i].age + "岁了";
+            console.log(person[i].name);
+            demo.appendChild(div);
+        }
+    };
+</script>
+<!--<script src="./js/index.js"></script>-->
 </html>
